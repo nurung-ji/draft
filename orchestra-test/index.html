@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내가 오케스트라에 입단한다면?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <div class="page" id="page-0">
+            <h1>내가 오케스트라에 입단한다면?</h1>
+            <p>이 테스트를 통해 당신에게 가장 적합한 악기를 찾아보세요!</p>
+            <p>소요시간: 약 1분</p>
+            <button onclick="nextPage(1)">시작하기</button>
+        </div>
+
+        <div class="page" id="page-1">
+            <h2>1. 당신의 성격은 어떤가요?</h2>
+            <div class="option" onclick="selectOption(1, 'a')">외향적이고 활발하다.</div>
+            <div class="option" onclick="selectOption(1, 'b')">차분하고 내성적이다.</div>
+            <div class="navigation">
+                <button onclick="prevPage(0)">이전</button>
+                <button id="next-1" class="hidden" disabled>다음</button>
+            </div>
+        </div>
+
+        <div class="page" id="page-2">
+            <h2>2. 당신의 체력은 어떤가요?</h2>
+            <div class="option" onclick="selectOption(2, 'a')">아주 좋다.</div>
+            <div class="option" onclick="selectOption(2, 'b')">보통이다.</div>
+            <div class="option" onclick="selectOption(2, 'c')">약간 부족하다.</div>
+            <div class="navigation">
+                <button onclick="prevPage(1)">이전</button>
+                <button id="next-2" class="hidden" disabled>다음</button>
+            </div>
+        </div>
+
+        <div class="page" id="page-3">
+            <h2>3. 악기를 연주할 때 당신이 중요하게 생각하는 것은?</h2>
+            <div class="option" onclick="selectOption(3, 'a')">강렬하고 힘찬 소리</div>
+            <div class="option" onclick="selectOption(3, 'b')">부드럽고 감미로운 소리</div>
+            <div class="option" onclick="selectOption(3, 'c')">경쾌하고 빠른 소리</div>
+            <div class="option" onclick="selectOption(3, 'd')">안정적이고 깊은 소리</div>
+            <div class="navigation">
+                <button onclick="prevPage(2)">이전</button>
+                <button id="next-3" class="hidden" disabled>다음</button>
+            </div>
+        </div>
+
+        <div class="page" id="page-4">
+            <h2>4. 자가용이 있나요?</h2>
+            <div class="option" onclick="selectOption(4, 'a')">있다.</div>
+            <div class="option" onclick="selectOption(4, 'b')">없다.</div>
+            <div class="navigation">
+                <button onclick="prevPage(3)">이전</button>
+                <button id="next-4" class="hidden" disabled>다음</button>
+            </div>
+        </div>
+
+        <div class="page" id="page-5">
+            <h2>5. 악기를 연습할 수 있는 공간이 충분한가요?</h2>
+            <div class="option" onclick="selectOption(5, 'a')">그렇다.</div>
+            <div class="option" onclick="selectOption(5, 'b')">아니다.</div>
+            <div class="navigation">
+                <button onclick="prevPage(4)">이전</button>
+                <button id="next-5" class="hidden" disabled>다음</button>
+            </div>
+        </div>
+
+        <div class="page" id="page-6">
+            <h2>6. 당신의 손놀림은 얼마나 빠른가요?</h2>
+            <div class="option" onclick="selectOption(6, 'a')">매우 빠르다.</div>
+            <div class="option" onclick="selectOption(6, 'b')">평균적이다.</div>
+            <div class="option" onclick="selectOption(6, 'c')">느리다.</div>
+            <div class="navigation">
+                <button onclick="prevPage(5)">이전</button>
+                <button id="next-6" class="hidden" disabled>결과 보기</button>
+            </div>
+        </div>
+
+        <div class="page" id="result-page">
+            <h2>당신에게 적합한 악기</h2>
+            <div class="result" id="result">
+                <img id="result-img" src="" alt="악기 이미지">
+                <h2 id="result-text"></h2>
+                <p id="instrument-info"></p>
+            </div>
+            <div class="button-group">
+                <button onclick="restartTest()">테스트 다시하기</button>
+                <button onclick="shareResult()">결과 공유하기</button>
+                <button onclick="window.open('https://www.youtube.com/@classic-salon-naver', '_blank')">클래식 살롱 연주 구경하기</button>
+                <button onclick="window.open('https://nhrlove.navercorp.com/user/hrms/bem/clubGreeny/clubGreenyMainPopup?period=ALL&search_type=CLUB_NM&search_text=%ED%81%B4%EB%9E%98%EC%8B%9D&catg_cd=ALL&recruitment_yn=ALL#none', '_blank')">클래식 살롱 가입하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
